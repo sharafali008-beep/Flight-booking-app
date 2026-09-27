@@ -66,10 +66,13 @@ data class ExtendedColors(
     val seatAvailable: Color,
     val seatBooked: Color,
     val seatPremium: Color,
+    /** Main call-to-action button (PrimaryButton). */
+    val primaryButton: Color,
+    val onPrimaryButton: Color,
 )
 
 val LocalExtendedColors = staticCompositionLocalOf {
-    ExtendedColors(Orange500, Green600, Slate200, Slate400, Orange100)
+    ExtendedColors(Orange500, Green600, Slate200, Slate400, Orange100, Red600, Color.White)
 }
 
 /** Spacing scale from the design guide: 4 / 8 / 12 / 16 / 24 dp. */
@@ -93,9 +96,9 @@ fun SkyBookTheme(
     content: @Composable () -> Unit
 ) {
     val extended = if (darkTheme) {
-        ExtendedColors(Orange400, Green400, Slate700, Slate800, Color(0xFF7C2D12))
+        ExtendedColors(Orange400, Green400, Slate700, Slate800, Color(0xFF7C2D12), Red500, Color.White)
     } else {
-        ExtendedColors(Orange500, Green600, Slate100, Slate400, Orange100)
+        ExtendedColors(Orange500, Green600, Slate100, Slate400, Orange100, Red600, Color.White)
     }
     androidx.compose.runtime.CompositionLocalProvider(LocalExtendedColors provides extended) {
         MaterialTheme(

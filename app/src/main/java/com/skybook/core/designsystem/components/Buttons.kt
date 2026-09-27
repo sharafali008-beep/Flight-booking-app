@@ -13,8 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.skybook.core.designsystem.theme.SkyBookTheme
+import com.skybook.core.designsystem.theme.extended
 
-/** The orange call-to-action button used for the main action on each screen. */
+/** The red call-to-action button used for the main action on each screen. */
 @Composable
 fun PrimaryButton(
     text: String,
@@ -29,15 +30,15 @@ fun PrimaryButton(
         modifier = modifier.fillMaxWidth().heightIn(min = 52.dp),
         shape = MaterialTheme.shapes.medium,
         colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.secondary,
-            contentColor = MaterialTheme.colorScheme.onSecondary,
+            containerColor = MaterialTheme.extended.primaryButton,
+            contentColor = MaterialTheme.extended.onPrimaryButton,
         )
     ) {
         if (loading) {
             CircularProgressIndicator(
                 modifier = Modifier.size(22.dp),
                 strokeWidth = 2.dp,
-                color = MaterialTheme.colorScheme.onSecondary
+                color = MaterialTheme.extended.onPrimaryButton
             )
         } else {
             Text(text, style = MaterialTheme.typography.labelLarge)
