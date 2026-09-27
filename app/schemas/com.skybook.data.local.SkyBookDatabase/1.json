@@ -1,0 +1,106 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "571a45a99461b2d26cfe359513fe752d",
+    "entities": [
+      {
+        "tableName": "bookings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bookingId` TEXT NOT NULL, `pnr` TEXT NOT NULL, `flight` TEXT NOT NULL, `passengers` TEXT NOT NULL, `fareType` TEXT NOT NULL, `baggage` TEXT NOT NULL, `baseFare` REAL NOT NULL, `seatsTotal` REAL NOT NULL, `addOnsTotal` REAL NOT NULL, `taxes` REAL NOT NULL, `totalPrice` REAL NOT NULL, `status` TEXT NOT NULL, `bookedAt` INTEGER NOT NULL, PRIMARY KEY(`bookingId`))",
+        "fields": [
+          {
+            "fieldPath": "bookingId",
+            "columnName": "bookingId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pnr",
+            "columnName": "pnr",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flight",
+            "columnName": "flight",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "passengers",
+            "columnName": "passengers",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fareType",
+            "columnName": "fareType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "baggage",
+            "columnName": "baggage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "baseFare",
+            "columnName": "baseFare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seatsTotal",
+            "columnName": "seatsTotal",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "addOnsTotal",
+            "columnName": "addOnsTotal",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxes",
+            "columnName": "taxes",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalPrice",
+            "columnName": "totalPrice",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bookedAt",
+            "columnName": "bookedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "bookingId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '571a45a99461b2d26cfe359513fe752d')"
+    ]
+  }
+}
